@@ -9,7 +9,7 @@ class Auth:
 
     def login(self, token):
         pass
-    @staticmethod
+    
     def signup(user):
         
         pass
@@ -17,9 +17,9 @@ class Auth:
         pass
 
     @staticmethod
-    def isLoggedIn():
+    def loginSession():
         with open("__logged_in_.cache", "r") as f:
-            return f.read()!=""
+            return f.read()
     
     @property
     def curent_user(self):

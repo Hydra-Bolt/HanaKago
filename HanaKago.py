@@ -2,8 +2,8 @@ import keyboard
 import os
 import time
 
-from Auth.auth import Auth
-from Main.users import User
+from AUTH.auth import Auth
+from MAIN.users import User
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -58,7 +58,7 @@ def sign_up():
 
 
 def main():
-    if Auth.loginSession():
+    if Auth.loginSession()!='':
         print("You're already logged in.")
         time.sleep(2)
         return
