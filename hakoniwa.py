@@ -1,5 +1,5 @@
 import json
-
+import secrets
 # My own DBMS named Hakoniwa(Box Garden)
 
 
@@ -8,15 +8,57 @@ class Hakoniwa:
     A class representing a database management system (DBMS) named Hakoniwa.
     """
 
-    def __init__(self, filename):
+    def __init__(self, filename, is_identity=False):
         """
         Initialize the Hakoniwa object with the provided filename.
 
         Parameters:
             filename (str): The name of the file to be initialized.
+            is_identity (bool): If True, generate sequential IDs.
+                               If False, generate random IDs.
         """
+
         self.filename = filename
         self.__data_records = self._parse_json()
+        self.current_id = self.loadCurrentID()
+
+
+        # Set the method to generate IDs
+        if is_identity:
+            # Generate sequential IDs
+            self.gen_id = self.genSequentialId
+        else:
+            # Generate random IDs
+            self.gen_id = self.genRandomId
+
+    def loadCurrentID(self):
+        with open("TABLES/id.cache", "r") as f:
+            lines = f.readlines()
+            if len(lines) == 0:
+                return 0
+            else:
+                for line in lines:
+                    if line.startswith(self.filename):
+                        return int(line.split("=")[1])
+
+    def saveCurrentID(self):
+        with open("TABLES/id.cache", "r+") as f:
+            lines = f.readlines()
+            for i in range(len(lines)):
+                if lines[i].startswith(self.filename):
+                    lines[i] = f"{self.filename}={self.current_id}\n"
+                    break
+            f.seek(0)
+            f.writelines(lines)
+
+    def genSequentialId(self):
+        self.current_id += 1
+        self.saveCurrentID()
+        return self.current_id
+
+    def genRandomId(self, length=16):
+        """Generate a random ID composed of numbers with a specified length."""
+        return int(''.join(secrets.choice('0123456789') for _ in range(length)))
 
     def _parse_json(self):
         """
@@ -40,14 +82,16 @@ class Hakoniwa:
         """
         return [record for record in self.__data_records if all(record.get(key) == value for key, value in dict_find.items())]
 
-    def insert(self, dict_insert):
+    def insert(self, record, add_id : str | None =None):
         """
         Insert a new record into the database file.
 
         Parameters:
-            dict_insert (dict): The dictionary containing the key-value pairs to insert into the database.
+            record (dict): The dictionary containing the key-value pairs to insert into the database.
         """
-        self.__data_records.append(dict_insert)
+        if add_id is not None:
+            record[add_id] = self.gen_id()
+        self.__data_records.append(record)
 
     def update(self, dict_find, dict_update):
         """
@@ -80,7 +124,7 @@ class Hakoniwa:
     @property
     def data_records(self):
         return self.__data_records
-    
+
     def __str__(self) -> str:
         return json.dumps(self.__data_records, indent=2)
     

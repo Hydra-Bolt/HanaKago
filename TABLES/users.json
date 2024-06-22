@@ -1,9 +1,18 @@
 [
-    {
-        "uid": 8971723127312,
-        "username": "John Doe",
-        "password": "12345",
-        "age": 25
-        
-    }
+  {
+    "user_id": 6944074016520176,
+    "first_name": "John Doe",
+    "last_name": "12345",
+    "age": 25,
+    "username": "john_doe",
+    "password": "johnny"
+  },
+  {
+    "first_name": "Muneeb",
+    "last_name": "Ahmed",
+    "age": "55",
+    "username": "muneeb",
+    "password": "muneeb1122",
+    "user_id": 5976847897221573
+  }
 ]

@@ -1,9 +1,122 @@
 [
     {
         "product_id": 1,
-        "name": "John Doe",
+        "name": "Wireless Mouse",
+        "price": 25,
+        "stock": 150
+    },
+    {
+        "product_id": 2,
+        "name": "Bluetooth Headphones",
+        "price": 50,
+        "stock": 75
+    },
+    {
+        "product_id": 3,
+        "name": "Laptop Stand",
+        "price": 30,
+        "stock": 200
+    },
+    {
+        "product_id": 4,
+        "name": "Mechanical Keyboard",
+        "price": 80,
+        "stock": 50
+    },
+    {
+        "product_id": 5,
+        "name": "USB-C Hub",
         "price": 40,
+        "stock": 100
+    },
+    {
+        "product_id": 6,
+        "name": "Portable SSD",
+        "price": 120,
+        "stock": 60
+    },
+    {
+        "product_id": 7,
+        "name": "4K Monitor",
+        "price": 300,
+        "stock": 30
+    },
+    {
+        "product_id": 8,
+        "name": "Webcam",
+        "price": 70,
+        "stock": 80
+    },
+    {
+        "product_id": 9,
+        "name": "Noise Cancelling Headphones",
+        "price": 200,
+        "stock": 40
+    },
+    {
+        "product_id": 10,
+        "name": "Smartwatch",
+        "price": 150,
+        "stock": 90
+    },
+    {
+        "product_id": 11,
+        "name": "Gaming Mouse Pad",
+        "price": 20,
+        "stock": 300
+    },
+    {
+        "product_id": 12,
+        "name": "Ergonomic Chair",
+        "price": 250,
+        "stock": 20
+    },
+    {
+        "product_id": 13,
+        "name": "Graphics Tablet",
+        "price": 100,
+        "stock": 55
+    },
+    {
+        "product_id": 14,
+        "name": "Wireless Charger",
+        "price": 35,
+        "stock": 110
+    },
+    {
+        "product_id": 15,
+        "name": "Smart Light Bulbs",
+        "price": 60,
+        "stock": 200
+    },
+    {
+        "product_id": 16,
+        "name": "VR Headset",
+        "price": 400,
         "stock": 25
-        
+    },
+    {
+        "product_id": 17,
+        "name": "External Hard Drive",
+        "price": 90,
+        "stock": 85
+    },
+    {
+        "product_id": 18,
+        "name": "Fitness Tracker",
+        "price": 75,
+        "stock": 100
+    },
+    {
+        "product_id": 19,
+        "name": "Smart Thermostat",
+        "price": 180,
+        "stock": 45
+    },
+    {
+        "product_id": 20,
+        "name": "Action Camera",
+        "price": 250,
+        "stock": 60
     }
 ]
