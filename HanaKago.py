@@ -2,8 +2,8 @@ import keyboard
 import os
 import time
 
-from auth import Auth
-from users import User
+from Auth.auth import Auth
+from Main.users import User
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
