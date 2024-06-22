@@ -48,7 +48,6 @@ class Hakoniwa:
             dict_insert (dict): The dictionary containing the key-value pairs to insert into the database.
         """
         self.__data_records.append(dict_insert)
-        self._update_db()
 
     def update(self, dict_find, dict_update):
         """
@@ -70,9 +69,18 @@ class Hakoniwa:
         with open(self.filename, "w") as file:
             json.dump(self.__data_records, file, indent=2)
 
+    def delete(self, dict_find):
+        """
+        Deletes a record from the database based on the provided `dict_find` dictionary.
+
+        Parameters:
+            dict_find (dict): The dictionary containing the key-value pairs to search for in the database.
+        """
+        self.__data_records = [record for record in self.__data_records if not all(record.get(key) == value for key, value in dict_find.items())]
     @property
     def data_records(self):
         return self.__data_records
     
     def __str__(self) -> str:
         return json.dumps(self.__data_records, indent=2)
+    
