@@ -1,0 +1,9 @@
+[
+    {
+        "product_id": 1,
+        "name": "John Doe",
+        "price": 40,
+        "stock": 25
+        
+    }
+]
