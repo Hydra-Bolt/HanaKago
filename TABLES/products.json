@@ -1,122 +1,62 @@
 [
     {
         "product_id": 1,
-        "name": "Wireless Mouse",
-        "price": 25,
+        "name": "Attack on Titan Manga - Volume 1",
+        "price": 1500,
         "stock": 150
     },
     {
         "product_id": 2,
-        "name": "Bluetooth Headphones",
-        "price": 50,
+        "name": "My Hero Academia Manga - Volume 1",
+        "price": 1500,
         "stock": 75
     },
     {
         "product_id": 3,
-        "name": "Laptop Stand",
-        "price": 30,
+        "name": "Naruto Shippuden DVD Box Set",
+        "price": 3000,
         "stock": 200
     },
     {
         "product_id": 4,
-        "name": "Mechanical Keyboard",
-        "price": 80,
+        "name": "Death Note Complete Box Set",
+        "price": 8000,
         "stock": 50
     },
     {
         "product_id": 5,
-        "name": "USB-C Hub",
-        "price": 40,
+        "name": "One Piece Manga - Volume 1",
+        "price": 1500,
         "stock": 100
     },
     {
         "product_id": 6,
-        "name": "Portable SSD",
-        "price": 120,
+        "name": "Sword Art Online Light Novel - Volume 1",
+        "price": 1800,
         "stock": 60
     },
     {
         "product_id": 7,
-        "name": "4K Monitor",
-        "price": 300,
+        "name": "Studio Ghibli Blu-ray Collection",
+        "price": 12000,
         "stock": 30
     },
     {
         "product_id": 8,
-        "name": "Webcam",
-        "price": 70,
+        "name": "Funko Pop! Anime Figures",
+        "price": 2500,
         "stock": 80
     },
     {
         "product_id": 9,
-        "name": "Noise Cancelling Headphones",
-        "price": 200,
+        "name": "Demon Slayer Manga - Volume 1",
+        "price": 1500,
         "stock": 40
     },
     {
         "product_id": 10,
-        "name": "Smartwatch",
-        "price": 150,
+        "name": "Tokyo Ghoul Complete Manga Box Set",
+        "price": 10000,
         "stock": 90
-    },
-    {
-        "product_id": 11,
-        "name": "Gaming Mouse Pad",
-        "price": 20,
-        "stock": 300
-    },
-    {
-        "product_id": 12,
-        "name": "Ergonomic Chair",
-        "price": 250,
-        "stock": 20
-    },
-    {
-        "product_id": 13,
-        "name": "Graphics Tablet",
-        "price": 100,
-        "stock": 55
-    },
-    {
-        "product_id": 14,
-        "name": "Wireless Charger",
-        "price": 35,
-        "stock": 110
-    },
-    {
-        "product_id": 15,
-        "name": "Smart Light Bulbs",
-        "price": 60,
-        "stock": 200
-    },
-    {
-        "product_id": 16,
-        "name": "VR Headset",
-        "price": 400,
-        "stock": 25
-    },
-    {
-        "product_id": 17,
-        "name": "External Hard Drive",
-        "price": 90,
-        "stock": 85
-    },
-    {
-        "product_id": 18,
-        "name": "Fitness Tracker",
-        "price": 75,
-        "stock": 100
-    },
-    {
-        "product_id": 19,
-        "name": "Smart Thermostat",
-        "price": 180,
-        "stock": 45
-    },
-    {
-        "product_id": 20,
-        "name": "Action Camera",
-        "price": 250,
-        "stock": 60
     }
 ]

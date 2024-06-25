@@ -62,5 +62,6 @@ class Customer(User):
             "last_name": self.last_name,
             "age": self.age,
             "username": self._username,
-            "password": self._password
+            "password": self._password,
+            'shopping_history': []
         }

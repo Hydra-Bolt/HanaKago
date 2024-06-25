@@ -1,18 +1,11 @@
 [
   {
-    "user_id": 6944074016520176,
-    "first_name": "John Doe",
-    "last_name": "12345",
-    "age": 25,
-    "username": "john_doe",
-    "password": "johnny"
-  },
-  {
-    "first_name": "Muneeb",
-    "last_name": "Ahmed",
-    "age": "55",
+    "first_name": "muneeb",
+    "last_name": "muneeb",
+    "age": 12,
     "username": "muneeb",
-    "password": "muneeb1122",
-    "user_id": 5976847897221573
+    "password": "muneeb",
+    "shopping_history": [],
+    "user_id": 6647153512617283
   }
 ]

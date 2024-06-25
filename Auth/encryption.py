@@ -1,58 +1,44 @@
-from cryptography.fernet import Fernet
 import os
+from Crypto.Cipher import AES
+from Crypto.Random import get_random_bytes
+import base64
 
 class Encryption:
-    _FERNET_TOKEN = None
+    @staticmethod
+    def pad(s):
+        # Padding to make the input a multiple of 16 bytes
+        return s + (AES.block_size - len(s) % AES.block_size) * chr(AES.block_size - len(s) % AES.block_size)
 
     @staticmethod
-    def generate_key():
-        """
-        Generates a new Fernet key and saves it to a file.
-        """
-        key = Fernet.generate_key()
-        with open("secret.key", "wb") as key_file:
-            key_file.write(key)
-        print(f"New key generated and saved: {key}")
+    def unpad(s):
+        # Unpadding the input
+        return s[:-ord(s[len(s)-1:])]
 
     @staticmethod
-    def load_fernet_token():
-        """
-        Loads the Fernet token from the file.
-        """
-        if Encryption._FERNET_TOKEN is None:
-            with open("secret.key", "rb") as token:
-                Encryption._FERNET_TOKEN = token.read()
-        print(f"Token loaded: {Encryption._FERNET_TOKEN}")
+    def encrypt(plain_text, key):
+        # Generating a random IV (Initialization Vector)
+        iv = os.urandom(16)
+        cipher = AES.new(key, AES.MODE_CBC, iv)
+        encrypted_text = cipher.encrypt(Encryption.pad(plain_text).encode('utf-8'))
+        # Encode to base64 to get a string format
+        return base64.b64encode(iv + encrypted_text).decode('utf-8')
 
-    @classmethod
-    def encrypt_data(cls, data):
-        """
-        Encrypts the given data using the cipher suite.
+    @staticmethod
+    def decrypt(encrypted_text, key):
+        # Decode the base64 encoded string
+        encrypted_text_bytes = base64.b64decode(encrypted_text)
+        iv = encrypted_text_bytes[:16]
+        cipher = AES.new(key, AES.MODE_CBC, iv)
+        decrypted_text = cipher.decrypt(encrypted_text_bytes[16:])
+        return Encryption.unpad(decrypted_text.decode('utf-8'))
 
-        Args:
-            data (str): The data to be encrypted.
+    @staticmethod
+    def encrypt_data(data):
+        key = open("secret.key", "rb").read()
+        return Encryption.encrypt(data, key)
 
-        Returns:
-            bytes: The encrypted data.
-        """
-        if cls._FERNET_TOKEN is None:
-            cls.load_fernet_token()
-        print(f"Token used for encryption: {cls._FERNET_TOKEN}")
-        return Fernet(cls._FERNET_TOKEN).encrypt(data.encode())
-
-    @classmethod
-    def decrypt_data(cls, encrypted_data):
-        """
-        Decrypts the given encrypted data using the cipher suite.
-
-        Args:
-            encrypted_data (bytes): The data to be decrypted.
-
-        Returns:
-            str: The decrypted data.
-        """
-        if cls._FERNET_TOKEN is None:
-            cls.load_fernet_token()
-        print(f"Token used for decryption: {cls._FERNET_TOKEN}")
-        return Fernet(cls._FERNET_TOKEN).decrypt(encrypted_data).decode()
+    @staticmethod
+    def decrypt_data(data):
+        key = open("secret.key", "rb").read()
+        return Encryption.decrypt(data, key)
 
