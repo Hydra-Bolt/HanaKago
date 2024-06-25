@@ -7,5 +7,23 @@
     "password": "muneeb",
     "shopping_history": [],
     "user_id": 6647153512617283
+  },
+  {
+    "first_name": "ahzaam",
+    "last_name": "rehan",
+    "age": 22,
+    "username": "ahzurehu",
+    "password": "ahzurehu",
+    "shopping_history": [],
+    "user_id": 2342991051542456
+  },
+  {
+    "first_name": "moizaaa",
+    "last_name": "moizaa",
+    "age": 3,
+    "username": "moizaa",
+    "password": "moizaa",
+    "shopping_history": [],
+    "user_id": 7087094207235788
   }
 ]

@@ -26,7 +26,7 @@ class Auth:
         self.__users._update_db()
 
     def logout(self):
-        with open("__logged_in_.cache", "w") as f:
+        with open("__logged_in_.cache", "w+") as f:
             f.truncate(0)
 
     @staticmethod

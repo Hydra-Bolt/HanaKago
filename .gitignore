@@ -5,3 +5,5 @@ admin.json
 
 cep_env/
 __pycache__/
+
+test.py
