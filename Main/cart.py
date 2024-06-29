@@ -36,7 +36,8 @@ class Cart:
     def checkout(self, user_id):
         products = [{"pid":int(pid), "quantity":int(quantity)} for pid, quantity in self.products.items()]
         print(products)
-        self.carts.insert({"uid": user_id, "products": products, "total": self.get_total(), "created_at": str(datetime.datetime.now())}, "cart_id")
+        created_at = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+        self.carts.insert({"uid": user_id, "products": products, "total": self.get_total(), "created_at": created_at}, "cart_id")
         self.carts._update_db()
 
     def get_user_cart(self, uid):

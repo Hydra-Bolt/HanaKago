@@ -341,7 +341,7 @@ class HanaKago:
             cart (dict): The cart details.
         """
         print(f"Cart ID: {cart['cart_id']}")
-        print(f"Checkout out on: {cart['created_at']}")
+        print(f"Checkout out time: {cart['created_at']}")
         print("Products:")
         for product in cart['products']:
             print(f"  Product: {self.products.products[product['pid']]['name']}, Quantity: {product['quantity']}")
@@ -415,6 +415,8 @@ class HanaKago:
                 exit()
             elif key_event == 'n':
                 break
+            else:
+                print("Invalid input. Please try again.")
 
 if __name__ == '__main__':
     HanaKago()

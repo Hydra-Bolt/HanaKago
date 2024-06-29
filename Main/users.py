@@ -63,5 +63,4 @@ class Customer(User):
             "age": self.age,
             "username": self._username,
             "password": self._password,
-            'shopping_history': []
         }
