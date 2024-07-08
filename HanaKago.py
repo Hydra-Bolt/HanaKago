@@ -1,4 +1,3 @@
-import keyboard
 import os
 from time import sleep
 
