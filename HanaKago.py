@@ -398,6 +398,7 @@ class HanaKago:
             self.clearScreen()
             return
         self.cart.checkout(self.user['user_id'])
+        print("Checkout successful!")
         self.cart = Cart()
         sleep(2)
         self.mainApp()
